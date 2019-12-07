@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <!--For the Login  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <!-- <link rel="stylesheet" href="styles/styles.min.css"> -->
+    <link rel="stylesheet" href="styles/Login-Form-Clean.css">
+</head>
+
+<body>
+  <div class="super_container">
+    <header>
+          <div class="main_nav_container">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-12 text-right">
+                              <div class="logo_container">
+                                  <a href="index.html">Public Amebo</a>
+                              </div>
+                              <nav class="navbar">
+                              </nav>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </header>
+        <div class="login-clean">
+            <form method="get" action="profile/user.html" class="form">
+                <center><h2 class="">Post Review</h2></center>
+                <div class="form-group">
+                    <select name="" id="" class="form-control agency">
+                            <option value="">Ministry of Labour</option>
+                            <option value="">Ministry of Trade</option>
+                            <option value="">Ministry of Transport</option>
+                            <option value="">Ministry of Communiation</option>
+                            <option value="">Ministry of Justice</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="" id="" class="form-control state">
+                            <option value="">Abuja</option>
+                            <option value="">Bauchi</option>
+                            <option value="">Enugu</option>
+                            <option value="">Lagos</option>
+                    </select>
+                </div>
+                <div class="form-group"><input class="form-control city" type="text" name="text" placeholder="Enter your city" required></div>
+                <div class="form-group"><input class="form-control rating" type="text" name="text" placeholder="Enter rating (1-5)" required></div>
+                <div class="form-group">
+                        <textarea name="comment" id="comment" cols="32" rows="4"  placeholder="Enter your comment..."></textarea>
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">POST</button>
+            </form>
+        </div>
+
+
+    <script src="styles/bootstrap4/popper.js"></script>
+    <script src="styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script>
+        const agencyField = document.querySelector('.agency');
+        const stateField = document.querySelector('.state');
+        const cityField = document.querySelector('.city');
+        const ratingField = document.querySelector('.rating');
+        const commentField = document.querySelector('#comment');
+        const form = document.querySelector('.form');
+    
+        function getValue(field) {
+        return field.options[field.selectedIndex].text;
+        }
+
+        auth.onAuthStateChanged(function(user) {
+            form.addEventListener('submit', (e) => {
+                if (user) {
+                    e.preventDefault();
+                    db.collection('comments').add({
+                        agencyName: getValue(agencyField),
+                        state: getValue(stateField),
+                        city: cityField.value,
+                        rating: ratingField.value,
+                        comment: commentField.value
+                    })
+                    .then(() => {
+                        console.log('Comment created successfully')
+                        // window.location = './index.html'
+                    })
+                    .catch(error => console.log(error.message))
+                } 
+                else {
+                    console.log('user not authenticated')
+                }
+            })
+        })
+        </script> 
+</body>
+
+</html>
+s
