@@ -4,25 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amebo | Login</title>
-    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <title>Public Amebo | Login</title>
+    
     <!--For the Login  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <!-- <link rel="stylesheet" href="styles/styles.min.css"> -->
-    <link rel="stylesheet" href="styles/Login-Form-Clean.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="super_container">
-    <header>
+    <div class="super_container">
+        <header>
           <div class="main_nav_container">
                   <div class="container">
                       <div class="row">
@@ -36,32 +27,24 @@
                       </div>
                   </div>
               </div>
-          </header>
+        </header>
         <div class="login-clean">
             <form method="get" action="profile/user.html" class="form">
-                <center><h2 class="">Sign in</h2></center>
+                <center><h2 class="">Login</h2></center>
                 
                 <div class="form-group"><input class="form-control email" type="email" name="email" placeholder="Email" required></div>
                 <div class="form-group"><input class="form-control password" type="password" name="password" placeholder="Password" required></div>
-                <div class="form-group"><button class="btn btn-primary btn-block btn-register" type="submit">Sign In</button></div><a href="register.html" class="forgot">Don't have an account yet?</a>
+                <div class="form-group"><button class="btn btn-primary btn-block btn-register" type="submit">Log In</button></div><a href="register.html" class="forgot">Don't have an account yet? Register</a>
                 <br>
-                <div class="form-group"><button class="btn btn-primary btn-block anon" type="submit">Sign In Anonymously</button></div><a href="#" class="forgot"></a>
+                <div class="form-group"><button class="btn btn-primary btn-block anon" type="submit">Log in Anonymously</button></div><a href="#" class="forgot"></a>
             </form>
         </div>
-
-        
-
-    <script src="styles/bootstrap4/popper.js"></script>
-    <script src="styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
-    <script src="firebase.js"></script>
+    <script src="./js/firebase.js"></script>
     <script>
         const email = document.querySelector('.email')
         const password = document.querySelector('.password')
